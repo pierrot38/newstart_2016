@@ -23,24 +23,38 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
+	public String index(Locale locale, Model model) {
+//		logger.info("Welcome home! The client locale is {}.", locale);
+//		Date date = new Date();
+//		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+//		String formattedDate = dateFormat.format(date);
+//		model.addAttribute("serverTime", formattedDate );
+		logger.info("home");		
 		return "home";
 	}
 	
-	@RequestMapping(value = "/h2", method = RequestMethod.GET)
-	public String home2(Model model) {
-		logger.info("home2");
-		
-		return "home2";
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String home(Model model) {
+		logger.info("home");		
+		return "home";
 	}
+	
+	@RequestMapping(value = "/about", method = RequestMethod.GET)
+	public String about(Model model) {
+		logger.info("about");		
+		return "about";
+	}
+	
+	@RequestMapping(value = "/blog", method = RequestMethod.GET)
+	public String blog(Model model) {
+		logger.info("blog");		
+		return "blog";
+	}		
+	
+	@RequestMapping(value = "/contact", method = RequestMethod.GET)
+	public String contact(Model model) {
+		logger.info("contact");		
+		return "contact";
+	}	
 	
 }
